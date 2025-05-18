@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Портфолио UI/UX дизайнера</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#8A4FFF", secondary: "#6A3DAF" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+          background-color: #1A0B2E;
+          color: #fff;
+          font-family: 'Inter', sans-serif;
+      }
+      .skill-line {
+          position: absolute;
+          height: 2px;
+          background: linear-gradient(90deg, rgba(138, 79, 255, 0.3) 0%, rgba(138, 79, 255, 0.8) 100%);
+          transform-origin: 0 0;
+          z-index: 0;
+      }
+      .hero-gradient {
+          background: radial-gradient(circle at 50% 50%, rgba(138, 79, 255, 0.2) 0%, rgba(26, 11, 46, 1) 70%);
+      }
+      .justify-text {
+        text-align: justify;
+        text-justify: inter-word;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Навигационная панель с фото -->
+    <header class="w-full py-6 px-8 flex justify-center items-center sticky top-0 bg-[#1A0B2E]/90 backdrop-blur-sm z-50">
+      <div class="flex items-center gap-8">
+        <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary">
+          <img src="лого.jpg" alt="Фото профиля" class="w-full h-full object-cover">
+        </div>
+        <nav class="flex gap-8">
+          <a href="#about" class="text-white hover:text-primary transition-colors">обо мне</a>
+          <a href="#skills" class="text-white hover:text-primary transition-colors">навыки</a>
+          <a href="#works" class="text-white hover:text-primary transition-colors">работы</a>
+          <a href="#contact" class="text-white hover:text-primary transition-colors">контакты</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Секция героя с фото -->
+    <section
+      class="w-full min-h-[600px] hero-gradient flex items-center justify-center px-8 py-20"
+    >
+      <div
+        class="w-full max-w-6xl flex flex-col md:flex-row items-center justify-between gap-12"
+      >
+        <div class="flex-1">
+          <div class="flex items-center mb-4">
+            <p class="text-gray-300 text-sm">Привет, я Соколов Арсений</p>
+            <div class="w-16 h-[1px] bg-primary ml-4"></div>
+          </div>
+          <p class="text-gray-300 mb-2">Дизайнер это тот, кто</p>
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            судит о книге по её<br />ее <span class="text-primary">обложке</span>
+          </h1>
+          <button
+            class="bg-primary hover:bg-opacity-90 text-white px-6 py-3 rounded-button transition-all whitespace-nowrap"
+          >
+            Написать мне
+          </button>
+        </div>
+        <div
+          class="w-64 h-64 bg-gradient-to-br from-primary/30 to-primary/10 rounded-full flex items-center justify-center overflow-hidden border-4 border-primary/30"
+        >
+          <img src="я.jpg" alt="Фото профиля" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция о себе с увеличенным и выровненным текстом -->
+    <section id="about" class="w-full px-8 py-20">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8">я — начинающий UI/UX дизайнер,</h2>
+        <p class="text-gray-300 max-w-3xl leading-relaxed mb-12 justify-text text-lg">
+          я совмещаю учебу в колледже с развитием в сфере цифрового дизайна.
+Мой путь в дизайне только начинается, но я уже успел погрузиться в мир создания удобных и эстетичных интерфейсов. Учусь на WEB-разработчика в Вологодском колледже связи и информационных технологий, где активно применяю полученные знания на практике, работая над учебными и личными проектами.
+        </p>
+      </div>
+    </section>
+
+    <!-- Остальные секции остаются без изменений -->
+    <!-- Секция навыков -->
+    <section id="skills" class="w-full px-8 py-20">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12">навыки:</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Навык 1 -->
+          <div class="bg-primary/10 rounded-xl p-6 hover:bg-primary/20 transition-all">
+            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+              <i class="ri-pencil-ruler-2-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Разработка прототипов</h3>
+            <p class="text-gray-300">Создание интерактивных прототипов для тестирования пользовательских сценариев</p>
+          </div>
+
+          <!-- Навык 2 -->
+          <div class="bg-primary/10 rounded-xl p-6 hover:bg-primary/20 transition-all">
+            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+              <i class="ri-tools-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Инструменты</h3>
+            <p class="text-gray-300">Figma, Adobe XD, Sketch, Photoshop, Illustrator</p>
+          </div>
+
+          <!-- Навык 3 -->
+          <div class="bg-primary/10 rounded-xl p-6 hover:bg-primary/20 transition-all">
+            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+              <i class="ri-smartphone-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Адаптивный дизайн</h3>
+            <p class="text-gray-300">Создание интерфейсов для всех типов устройств</p>
+          </div>
+
+          <!-- Навык 4 -->
+          <div class="bg-primary/10 rounded-xl p-6 hover:bg-primary/20 transition-all">
+            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+              <i class="ri-box-3-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Компонентный подход</h3>
+            <p class="text-gray-300">Работа с дизайн-системами и библиотеками компонентов</p>
+          </div>
+
+          <!-- Навык 5 -->
+          <div class="bg-primary/10 rounded-xl p-6 hover:bg-primary/20 transition-all">
+            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+              <i class="ri-lightbulb-flash-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Концептуальное мышление</h3>
+            <p class="text-gray-300">Разработка креативных решений для сложных задач</p>
+          </div>
+
+          <!-- Навык 6 -->
+          <div class="bg-primary/10 rounded-xl p-6 hover:bg-primary/20 transition-all">
+            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+              <i class="ri-artboard-2-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Брендинг</h3>
+            <p class="text-gray-300">Работа с брендбуками и гайдлайнами</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- Секция примеров работ с фото -->
+    <section id="works" class="w-full px-8 py-20">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12">примеры работ:</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Проект 1 -->
+          <div class="bg-primary/10 rounded-lg overflow-hidden hover:shadow-lg transition-all">
+            <div class="h-56 relative overflow-hidden">
+              <img src="отель.jpg" 
+                   alt="Редизайн интернет-магазина" 
+                   class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                <h3 class="text-xl font-bold text-white">Сайт мини-отеля</h3>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-300 mb-4">
+                Создание интерфейса для популярного мини-отеля
+              </p>
+              <div class="flex gap-2">
+                <span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full">UI</span>
+                <span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full">Figma</span>
+                
+              </div>
+            </div>
+          </div>
+
+          <!-- Проект 2 -->
+          <div class="bg-primary/10 rounded-lg overflow-hidden hover:shadow-lg transition-all">
+            <div class="h-56 relative overflow-hidden">
+              <img src="сталин.jpg" 
+                   alt="Мобильное приложение" 
+                   class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                <h3 class="text-xl font-bold text-white">Сайт "ИсторияХХ"</h3>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-300 mb-4">
+                Создание сайта для любителей истории 20 века
+              </p>
+              <div class="flex gap-2">
+                <span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full">UX</span>
+                <span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full">Прототипирование</span>
+                
+              </div>
+            </div>
+          </div>
+
+          <!-- Проект 3 -->
+          <div class="bg-primary/10 rounded-lg overflow-hidden hover:shadow-lg transition-all">
+            <div class="h-56 relative overflow-hidden">
+              <img src="тест.jpg" 
+                   alt="Онлайн-курс" 
+                   class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                <h3 class="text-xl font-bold text-white">Интерактивный тест</h3>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-300 mb-4">
+                Создание интерактивного теста для образовательной организации
+              </p>
+              <div class="flex gap-2">
+                <span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full">UI</span>
+                <span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full">Образование</span>
+                <span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full">Адаптивный дизайн</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Контактная секция -->
+    <section
+      id="contact"
+      class="w-full px-8 py-20 bg-gradient-to-b from-[#1A0B2E] to-[#1A0B2E]/80"
+    >
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">давайте работать вместе</h2>
+        <p class="text-gray-300 max-w-2xl mx-auto mb-10">
+          Если вам нужен креативный UI/UX дизайнер с свежим взглядом и
+          стремлением к постоянному развитию — я готов обсудить ваш проект
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
+        >
+          <a
+            href="mailto:design@example.ru"
+            class="bg-primary hover:bg-opacity-90 text-white px-8 py-3 rounded-button transition-all flex items-center gap-2 whitespace-nowrap"
+          >
+            <i class="ri-mail-line"></i>
+            <span>Ars.mirage29@yandex.ru</span>
+          </a>
+          <a
+            href="tel:+79001234567"
+            class="bg-transparent border border-primary text-primary hover:bg-primary/10 px-8 py-3 rounded-button transition-all flex items-center gap-2 whitespace-nowrap"
+          >
+            <i class="ri-phone-line"></i>
+            <span>+7 999 999-99-99</span>
+          </a>
+        </div>
+
+        <div class="flex justify-center gap-6">
+          
+          
+          <a
+            href="#"
+            class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/20 hover:bg-primary/30 transition-all"
+          >
+            <i class="ri-telegram-line"></i>
+          </a>
+          <a
+            href="#"
+            class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/20 hover:bg-primary/30 transition-all"
+          >
+            <i class="ri-instagram-line"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="w-full px-8 py-6 border-t border-gray-800">
+      <div class="max-w-6xl mx-auto text-center">
+        <p class="text-gray-400 text-sm">
+          © 2025 Все права защищены. Соколов Арсений
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Анимация появления элементов при прокрутке
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("opacity-100", "translate-y-0");
+                entry.target.classList.remove("opacity-0", "translate-y-10");
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+
+        document.querySelectorAll("section > div").forEach((section) => {
+          section.classList.add(
+            "opacity-0",
+            "translate-y-10",
+            "transition-all",
+            "duration-700",
+          );
+          observer.observe(section);
+        });
+      });
+    </script>
+  </body>
+</html>
